@@ -60,10 +60,10 @@ resource publicIp 'Microsoft.Network/publicIPAddresses@2023-09-01' = {
   name: 'iac-public-ip'
   location: location
   sku: {
-    name: 'Basic'
+    name: 'Standard'
   }
   properties: {
-    publicIPAllocationMethod: 'Dynamic'
+    publicIPAllocationMethod: 'Static'
   }
 }
 
