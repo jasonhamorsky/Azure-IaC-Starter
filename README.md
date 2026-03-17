@@ -2,30 +2,75 @@
 Azure Infrastructure-as-Code starter project using Bicep. Deploys a resource group, virtual network, subnet, and virtual machine. Part of my MSSA Cloud Administrator portfolio.
 # Azure Infrastructure-as-Code Starter Project (Bicep)
 
-## Overview
-This project deploys a simple Azure environment using Infrastructure-as-Code (IaC) with Bicep. It includes a resource group, virtual network, subnet, and virtual machine. This project is part of my MSSA Cloud Administrator portfolio.
+Azure IaC Starter — Bicep Deployment of a Virtual Machine Environment
+This project demonstrates a complete, end‑to‑end Infrastructure‑as‑Code (IaC) deployment in Microsoft Azure using Bicep and Azure CLI. It provisions a fully functional virtual machine environment, validates the deployment through both CLI and Azure Portal, and documents the entire workflow with screenshots.
+This repo is designed to show real‑world IaC skills, troubleshooting ability, and clean documentation — the exact combination hiring managers look for in IT Operations and Identity roles.
+Resources Deployed
+• 	Virtual Machine (Standard_D2s_v3)
+• 	Virtual Network
+• 	Subnet
+• 	Network Interface
+• 	Network Security Group
+• 	Public IP (Standard SKU)
+• 	Managed OS Disk
+Technologies Used
+• 	Azure Bicep
+• 	Azure CLI (Cloud Shell)
+• 	Azure Resource Manager (ARM)
+• 	Azure Portal
+• 	GitHub
+Repository Structure
+/Bicep
+    main.bicep
 
-## Architecture
-(To be added later)
+/screenshots
+    (All CLI + Portal screenshots)
 
-## What This Deployment Includes
-- Resource Group
-- Virtual Network (VNet)
-- Subnet
-- Azure Virtual Machine
-- Network Security Group (optional)
-- Storage Account (optional)
-
-## Folder Structure
-- **/bicep** – Bicep templates for the deployment  
-- **/images** – Screenshots of the deployment and results  
-- **/docs** – Architecture notes and workflow documentation  
-- **/scripts** – Optional PowerShell or CLI scripts  
-
-## Lessons Learned
-(To be filled in after deployment)
-
-## Next Steps
-- Add NSG rules
-- Add outputs to Bicep
-- Add a GitHub Actions workflow for template validation
+/README.md
+Deployment Instructions
+1. Download the Bicep template into Cloud Shell
+wget https://raw.githubusercontent.com/jasonhamorsky/Azure-IaC-Starter/main/Bicep/main.bicep -O main.bicep
+2. Deploy the environment
+az deployment group create \
+  --resource-group iac-starter-rg \
+  --template-file main.bicep \
+  --parameters adminPassword="*********"
+The deployment completes successfully when the CLI returns to your prompt with no errors.
+Verification
+All verification screenshots (CLI and Portal) are located in:
+/screenshots
+These include:
+Azure CLI
+• 	Viewing the Bicep file (cat main.bicep)
+• 	Listing workspace files (ls -l)
+• 	Deployment status via Azure CLI
+Azure Portal
+• 	Resource Group overview
+• 	VM overview (size, region, status)
+• 	Public IP configuration (Standard SKU)
+• 	NSG inbound rules
+• 	VNet + Subnet configuration
+• 	Deployment history showing Succeeded
+What I Learned
+• 	How to deploy Azure resources using Bicep instead of ARM JSON
+• 	How to troubleshoot real Azure errors:
+• 	SKU availability issues
+• 	Region capacity restrictions
+• 	Public IP SKU limitations in restricted tenants
+• 	How to validate deployments using both CLI and Portal
+• 	How to structure a clean, recruiter‑friendly GitHub repo
+• 	How to document IaC projects with clarity and professionalism
+Next Steps
+• 	Add parameters for VM name, size, and region
+• 	Deploy multiple VMs using modules
+• 	Add Key Vault + Private Endpoint
+• 	Automate teardown with a delete script
+• 	Convert this into a reusable IaC starter template
+Purpose
+This project demonstrates:
+• 	Hands‑on Azure experience
+• 	Real troubleshooting under constraints
+• 	Clean IaC practices
+• 	Professional documentation
+• 	A reproducible workflow that others can follow
+It serves as a strong portfolio piece for IT Operations, Identity, and Cloud Support roles.
