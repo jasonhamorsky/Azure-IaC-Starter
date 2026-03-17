@@ -4,7 +4,7 @@ Azure Infrastructure-as-Code starter project using Bicep. Deploys a resource gro
 
 Azure IaC Starter — Bicep Deployment of a Virtual Machine Environment
 This project demonstrates a complete, end‑to‑end Infrastructure‑as‑Code (IaC) deployment in Microsoft Azure using Bicep and Azure CLI. It provisions a fully functional virtual machine environment, validates the deployment through both CLI and Azure Portal, and documents the entire workflow with screenshots.
-This repo is designed to show real‑world IaC skills, troubleshooting ability, and clean documentation — the exact combination hiring managers look for in IT Operations and Identity roles.
+This repo is designed to show real‑world IaC skills, troubleshooting ability, and clean documentation.
 Resources Deployed
 • 	Virtual Machine (Standard_D2s_v3)
 • 	Virtual Network
@@ -58,7 +58,6 @@ What I Learned
 • 	Region capacity restrictions
 • 	Public IP SKU limitations in restricted tenants
 • 	How to validate deployments using both CLI and Portal
-• 	How to structure a clean, recruiter‑friendly GitHub repo
 • 	How to document IaC projects with clarity and professionalism
 Next Steps
 • 	Add parameters for VM name, size, and region
@@ -73,4 +72,3 @@ This project demonstrates:
 • 	Clean IaC practices
 • 	Professional documentation
 • 	A reproducible workflow that others can follow
-It serves as a strong portfolio piece for IT Operations, Identity, and Cloud Support roles.
